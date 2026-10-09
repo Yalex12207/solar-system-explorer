@@ -1,0 +1,25 @@
+# Normalise line endings across platforms.
+#
+# Without this, Git on Windows eagerly converts every text file to CRLF and reports
+# "LF will be replaced by CRLF" for the whole tree — and a collaborator on macOS or Linux
+# then sees every line of every file as changed. Pinning the repository contents to LF
+# keeps diffs meaningful; Windows checkouts are still free to use CRLF locally.
+* text=auto eol=lf
+
+# Binary assets must never be touched.
+*.png  binary
+*.jpg  binary
+*.jpeg binary
+*.gif  binary
+*.webp binary
+*.ico  binary
+*.wasm binary
+*.task binary
+
+# Two vendored JavaScript bundles from MediaPipe. They are build output we ship verbatim,
+# so they are excluded from language stats and from diff noise.
+public/mediapipe/wasm/*.js linguist-vendored -diff
+public/mediapipe/wasm/*.wasm linguist-vendored
+
+# Test fixtures are minified-free but machine-generated; keep them diffable.
+tools/hand-fixture.mjs text eol=lf

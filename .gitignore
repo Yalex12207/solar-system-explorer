@@ -1,0 +1,43 @@
+# Dependencies
+node_modules
+
+# Build output
+dist
+dist-ssr
+
+# Vite cache
+.vite
+
+# Test and diagnostic artefacts
+#
+# The verification harnesses write Playwright browser profiles (tens of MB each) and
+# screenshot sets. `.gitignore` previously matched `.verify-profile*` and `verify-shots`
+# exactly, which missed the `verify-shots-build` set and every `.gl-probe-*` profile —
+# roughly 230 MB of disposable files that a first commit would otherwise have swallowed.
+.verify-profile*
+.gl-probe-*
+verify-shots*
+test-results*
+playwright-report*
+
+# Local scratch space
+.esbuild-tmp
+.npm-cache
+
+# Environment
+*.local
+.env
+.env.*
+!.env.example
+
+# Editors and OS
+.DS_Store
+Thumbs.db
+.idea
+.vscode/*
+!.vscode/extensions.json
+
+# Logs
+npm-debug.log*
+yarn-error.log*
+pnpm-debug.log*

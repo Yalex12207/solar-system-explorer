@@ -1,0 +1,45 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1, viewport-fit=cover" />
+    <meta name="theme-color" content="#05070D" />
+    <link rel="icon" href="data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%2064%2064%22%3E%20%3Cdefs%3E%20%3CradialGradient%20id%3D%22g%22%20cx%3D%2234%25%22%20cy%3D%2230%25%22%3E%20%3Cstop%20offset%3D%220%25%22%20stop-color%3D%22%239fe0ff%22%2F%3E%20%3Cstop%20offset%3D%2255%25%22%20stop-color%3D%22%232f6fd0%22%2F%3E%20%3Cstop%20offset%3D%22100%25%22%20stop-color%3D%22%230b1c3a%22%2F%3E%20%3C%2FradialGradient%3E%20%3C%2Fdefs%3E%20%3Ccircle%20cx%3D%2232%22%20cy%3D%2232%22%20r%3D%2213%22%20fill%3D%22url(%23g)%22%2F%3E%20%3Cellipse%20cx%3D%2232%22%20cy%3D%2232%22%20rx%3D%2226%22%20ry%3D%227.5%22%20fill%3D%22none%22%20stroke%3D%22%23ffcf8a%22%20stroke-width%3D%222%22%20opacity%3D%220.85%22%20transform%3D%22rotate(-18%2032%2032)%22%2F%3E%20%3Ccircle%20cx%3D%2232%22%20cy%3D%2232%22%20r%3D%2230%22%20fill%3D%22none%22%20stroke%3D%22%237fb0ff%22%20stroke-width%3D%221%22%20opacity%3D%220.35%22%2F%3E%20%3C%2Fsvg%3E" />
+    <meta
+      name="description"
+      content="Solar System Explorer — an immersive interactive atlas of our cosmic neighborhood. Explore planets, moons and deep space missions in real time."
+    />
+    <title>Solar System Explorer — An Interactive Atlas</title>
+    <style>
+      /* Pre-hydration canvas so there is never a white flash, even before React mounts. */
+      html,
+      body {
+        margin: 0;
+        padding: 0;
+        background: #05070d;
+        color: #e8ecf4;
+        overscroll-behavior: none;
+      }
+      #root {
+        min-height: 100vh;
+      }
+      #boot-fallback {
+        position: fixed;
+        inset: 0;
+        display: grid;
+        place-items: center;
+        background: #05070d;
+        font-family: ui-sans-serif, system-ui, -apple-system, 'Segoe UI', sans-serif;
+        letter-spacing: 0.5em;
+        font-size: 12px;
+        color: #6b7688;
+        transition: opacity 0.6s ease;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="root"></div>
+    <div id="boot-fallback">SOLAR SYSTEM</div>
+    <script type="module" src="/src/main.jsx"></script>
+  </body>
+</html>
